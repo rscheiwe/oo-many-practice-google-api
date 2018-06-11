@@ -30,6 +30,7 @@ require 'pry'
 # OBJECTIVES
   * Draw this domain on a whiteboard or http://awwapp.com/
   * Build out the three classes and files from scratch (keep in mind the relationships)
+  * Build out a single class the employs the `RestClient` and `JSON` methods for obtaining data. 
   * Think about how the classes will interact -- how does a publisher know about its titles? Et al.
   * Use attr_reader, attr_writer, & attr_accessor
   * Create a run file with a single point of entry
@@ -39,9 +40,10 @@ require 'pry'
 
 # OBJECTIVES for EXECUTING
 
-  * Use Google Books API to query the Books Library. 
-  * Define API parameters at https://developers.google.com/books/docs/v1/using#st_params. The `RestClient.get` call should utilize `JSON.parse` to return .json-formatted data that includes `book_title`, `book_author`, `book_publisher`, and `published_date`. 
-  * The API's `MaxResults` parameter should be set to at least `100`. 
+  * Use Google Books API to query the Books Library with a predetermined `term`. 
+  * Define API parameters at https://developers.google.com/books/docs/v1/using#st_params. 
+  * The `RestClient.get` call should utilize `JSON.parse` to return .json-formatted data that includes `book_title`, `book_author`, `book_publisher`, and `published_date`. 
+  * The API's `MaxResults` parameter should be set to _at least_ `100` to develop deep enough many-to-many relationships. 
 
 ==============================================================
 
