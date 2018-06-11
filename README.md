@@ -19,7 +19,8 @@
 
 # REQUIRE
 
-```require 'rest-client'
+```
+require 'rest-client'
 require 'json'
 require 'pry'
 ```
@@ -29,10 +30,16 @@ require 'pry'
 # OBJECTIVES
   * Draw this domain on a whiteboard or http://awwapp.com/
   * Build out the three classes and files from scratch (keep in mind the relationships)
-  * Think about how the classes will interact -- how does a doctor know about their patients?
+  * Think about how the classes will interact -- how does a publisher know about its titles? Et al.
   * Use attr_reader, attr_writer, & attr_accessor
   * Create a run file with a single point of entry
   * Maintain single source of truth for all classes
+
+==============================================================
+
+# OBJECTIVES for EXECUTING
+
+  * Use Google Books API to query 
 
 ==============================================================
 
