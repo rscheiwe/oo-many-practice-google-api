@@ -1,6 +1,6 @@
 # oo-many-practice-google-api
 
-(after @aalexander3/oo-many-many-practice)
+(after @aalexander3/oo-many-many-practice/)
 
 # Here's our domain:
   * Author
@@ -19,7 +19,7 @@
 
 # REQUIRE
 
-```
+```ruby
 require 'rest-client'
 require 'json'
 require 'pry'
@@ -39,7 +39,8 @@ require 'pry'
 
 # OBJECTIVES for EXECUTING
 
-  * Use Google Books API to query 
+  * Use Google Books API to query the Books Library. 
+  * Define API parameters at https://developers.google.com/books/docs/v1/using#st_params. The `RestClient.get` call should utilize `JSON.parse` to return .json-formatted data that includes `book_title`, `book_author`, `book_publisher`, and `published_date`. 
 
 ==============================================================
 
