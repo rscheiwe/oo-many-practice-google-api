@@ -30,34 +30,41 @@ require 'pry'
 # OBJECTIVES
   * Draw this domain on a whiteboard or http://awwapp.com/
   * Build out the three classes and files from scratch (keep in mind the relationships)
-  * Build out a single class the employs the `RestClient` and `JSON` methods for obtaining data. 
+  * Build out a single class the employs the `RestClient` and `JSON` methods for obtaining and parsing data via the Google Books API. 
   * Think about how the classes will interact -- how does a publisher know about its titles? Et al.
   * Use attr_reader, attr_writer, & attr_accessor
   * Create a run file with a single point of entry
-  * Maintain single source of truth for all classes
+  * Maintain _single source of truth_ for all classes
 
 ==============================================================
 
 # OBJECTIVES for EXECUTING
 
-  * Use Google Books API to query the Books Library with a predetermined `term`. 
-  * To define API parameters, see https://developers.google.com/books/docs/v1/using#st_params. 
+  * Use the Google Books API to query the Books Library with a predetermined `term`. 
+  * To define API parameters, see https://developers.google.com/books/docs/v1/using#st_params. Any combination of parameters may be used. 
   * The `RestClient.get` call should utilize `JSON.parse` to return .json-formatted data that includes `book_title`, `book_author`, `book_publisher`, and `published_date`. 
   * The API's `MaxResults` parameter should be set to _at least_ `100` to develop deep enough many-to-many relationships. 
 
 ==============================================================
 
 # DELIVERABLES
-  * INSTITUTION
-    * #initialize an institution is initialized with a name and a kind (e.g., gym, salon, etc.)
-    * an institution cannot change its name, but can change its kind
-    * Institution.all returns all instances of the institution class
-    * #memberships returns an array of all the membership instances that belong_to an institution
-    * #members return an array of all the members that are associated with an institution
-    * #member names return an array of just the names of said members (First and Last), not the full object
+  * DATA
+    * #intialize a `RestClient` call is initialized with proper `term`
+    * #class_calls interates over the resulting data hash and makes the appropriate calls on the `Publisher`, `Author`, and `Title` classes
+    
+==============================================================
+
+  * PUBLISHER
+    * #initialize a publisher is initialized with a name and year
+    * a publisher cannot change its name, but can change its year
+    * Publisher.all returns all instances of the publisher class
+    * #publishers returns an array of all the publisher instances that belong_to an publisher
+    * #authors return an array of all the authors that are associated with a publisher
+    * #years returns an array of all the years and titles that are associated with a publisher
+    * #author_names return an array of just the names of said members (First and Last), not the full object
     ====== BONUS ======
-    * Institution.find_by_kind takes in a kind (e.g., "gym") as an argument and finds an institution by a given kind
-    * #upgrade_membership takes in a membership and a new tier ("free" => "premium") and changes the membership's tier
+    * Publisher.find_by_year takes in a year (e.g., INTEGER) as an argument and finds a publisher by a given year
+    * #input_pages takes in a title and a page number and adds the page-number count as an optional value to the title
 
 ==============================================================
   * MEMBER
