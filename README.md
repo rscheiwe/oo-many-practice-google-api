@@ -67,22 +67,21 @@ require 'pry'
     * #input_pages takes in a title and a page number and adds the page-number count as an optional value to the title
 
 ==============================================================
-  * MEMBER
-    * #initialize a member is initialized with a first_name and last_name
-    * a member cannot change their name
-    * Member.all returns all instances of the member class
-    * #member_name converts a member's first and last name to member_name (e.g., "John Smith => "jsmith")
-    * #memberships returns an array of all the memberships associated with an instance of member
-    * #buy_membership creates a new membership instance taking in an institution and a tier (e.g., 
-free", "premium")
+  * AUTHOR
+    * #initialize an author is initialized with a first_name and last_name
+    * an author cannot change their name
+    * Author.all returns all instances of the author class
+    * #author_name converts an author's first and last name to indexable author_name (e.g., "John Smith => "jsmith")
+    * #titles returns an array of all the titles associated with an instance of author
+    * #new_title creates a new title instance taking in a publisher and a year
     ====== BONUS ======
-    * Member.find_by_name takes in member_name (e.g., "jsmith", not "John Smith") as an argument and finds a member's full name by a member_name
-    * #find_institution finds an institution by kind (e.g., "gym", "salon") -- utilizing the Institution.find_by_kind class method
+    * Author.find_by_name takes in author_name (e.g., "jsmith", not "John Smith") as an argument and returns an author's full name and titles by a member_name
+    * #find_publisher finds a publisher by year  -- utilizing the Publisher.find_by_year class method
 
 ==============================================================
-  * MEMBERSHIP
-    * #initialize  a membership is initialized with a tier ("free", "premium", etc.), a member and an institution
-    * an membership has corresponding methods for all three attributes
-    * Membership.all returns all instances of the membership class
+  * TITLE
+    * #initialize  a title is initialized with a printType (e.g., "BOOK", "eBOOK"), an author, and a publisher
+    * a title has corresponding methods for all three attributes
+    * Title.all returns all instances of the title class
 
 ==============================================================
