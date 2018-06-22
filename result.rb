@@ -20,6 +20,7 @@ class Result
     response = RestClient.get "https://www.googleapis.com/books/v1/volumes?q={#{term}}"+"&maxResults=40"
     json = JSON.parse(response.body)
     json
+    binding.pry
   end
 
   def display_books(term)

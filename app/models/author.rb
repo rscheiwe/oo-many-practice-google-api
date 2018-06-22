@@ -1,17 +1,11 @@
-require 'pry'
+class Author < ActiveRecord::Base
 
-class Author
+  has_many :publishers
+  has_many :books, through: :publishers
 
-  attr_accessor :name
+  def self.seed_authors
 
-  @@all = []
-
-  def initialize(name)
-    @name = name
-
-    @@all << self
   end
-
 #some books have multiple authors, so this flattens all authors together
 #and it could screw with the count in some way.
   def self.all_authors

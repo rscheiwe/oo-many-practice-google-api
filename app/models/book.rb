@@ -1,19 +1,12 @@
-class Book
+class Book < ActiveRecord::Base
 
-  attr_accessor :arr
+  has_many :publishers
+  has_many :authors, through: :publishers
 
-  @@all = []
+  def self.seed_books
 
-  def initialize(arr)
-    @arr = arr
-
-    @@all << self
   end
-
-  def self.all
-    @@all.flatten
-  end
-
+end
 #Book.all[0].arr.books.flatten
 #Book.all[0].arr.books.flatten[0][:title
 
@@ -33,5 +26,3 @@ class Book
 # Book.all will be length == 2
 # ===THEN===
 # Book.all.map {|book_list| book_list.arr.flatten.map{|book| book[:title]}}.flatten
-
-end
