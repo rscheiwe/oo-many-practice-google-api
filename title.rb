@@ -1,6 +1,6 @@
 require 'pry'
 
-class Author
+class Title
 
   attr_accessor :name
 
@@ -14,20 +14,20 @@ class Author
 
 #some books have multiple authors, so this flattens all authors together
 #and it could screw with the count in some way.
-  def self.all_authors
+  def self.all_titles
     books = Book.all.map {|book_list| book_list.arr }.flatten
     #binding.pry
-    authors = books.map {|book| book[:author]}.flatten
-    authors = authors.reject!{|author| author == nil}
+    titles = books.map {|book| book[:title]}.flatten
+    titles = titles.reject!{|title| title == nil}
 
-    @@all << authors
+    @@all << titles
   end
 
   def self.find_author(name)
     # self.all.select {|author| author == name}
 
-    self.all.flatten.select.with_index do |author, idx|
-      if author == name
+    self.all.flatten.select.with_index do |title, idx|
+      if title == name
         "#{idx}: #{name}"
       end
     end
